@@ -10,7 +10,34 @@ namespace Space_game.Cards
 {
     class Card
     {
-        protected int energyCost;
+        protected string CardName;
+        protected int EnergyCost;
+
+        public string GetCardName()
+        {
+            return CardName;
+        }
+
+        public Card()
+        {
+            EnergyCost = 0;
+        }
+
+        public Card(int energyCost)
+        {
+            EnergyCost = energyCost;
+        }
+
+        public Card(string cardName)
+        {
+            CardName = cardName;
+        }
+
+        public Card(int energyCost, string cardName)
+        {
+            CardName = cardName;
+            EnergyCost = energyCost;
+        }
 
         virtual public void SpecialEffect(IEnumerable<string> effectNames)
         {

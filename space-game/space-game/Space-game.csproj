@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Cards\Attack\AttackCard.cs" />
     <Compile Include="Enumerations\PlayerStatus.cs" />
+    <Compile Include="Enumerations\SpecialEffects.cs" />
     <Compile Include="Enumerations\TurnActions.cs" />
     <Compile Include="Game\Game.cs" />
     <Compile Include="Game\Turn.cs" />
@@ -72,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="UnitTesting\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
