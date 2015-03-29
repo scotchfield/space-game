@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cards\Attack\AttackCard.cs" />
+    <Compile Include="Enumerations\PlayerStatus.cs" />
     <Compile Include="Enumerations\TurnActions.cs" />
     <Compile Include="Game\Game.cs" />
     <Compile Include="Game\Turn.cs" />

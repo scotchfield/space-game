@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Space_game.Enumerations;
+
 namespace Space_game.Interfaces
 {
     interface IPlayer
@@ -11,5 +13,6 @@ namespace Space_game.Interfaces
         void RemoveHullPoints(int damage);
         int GetHullPoints();
 
+        PlayerStatus GetPlayerStatus();
     }
 }

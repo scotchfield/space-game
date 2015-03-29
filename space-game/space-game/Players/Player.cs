@@ -5,11 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Space_game.Interfaces;
+using Space_game.Enumerations;
 
 namespace Space_game.Players
 {
     class Player : IPlayer
     {
+        string PlayerName;
+
         int totalEnergy;
         int maxEnergy = 10;
 
@@ -17,15 +20,34 @@ namespace Space_game.Players
         PlayerDeck Deck;
         PlayerHand Hand;
 
+        PlayerStatus DeadOrAlive;
+
+        public PlayerStatus GetPlayerStatus()
+        {
+            return DeadOrAlive;
+        }
+
+        public Player(string playerName)
+        {
+            PlayerName = playerName;
+            totalEnergy = 2;
+            DeadOrAlive = PlayerStatus.Alive;
+        }
+
         public void RemoveHullPoints(int damage)
         {
             this.Hullpoints -= damage;
+            if(Hullpoints <= 0)
+            {
+                DeadOrAlive = PlayerStatus.Dead;
+            }
         }
 
         public int GetHullPoints()
         {
             return Hullpoints;
         }
+
 
     }
 }
