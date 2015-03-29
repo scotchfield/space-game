@@ -8,6 +8,8 @@ namespace Space_game.Interfaces
 {
     interface IPlayer
     {
-        
+        void RemoveHullPoints(int damage);
+        int GetHullPoints();
+
     }
 }

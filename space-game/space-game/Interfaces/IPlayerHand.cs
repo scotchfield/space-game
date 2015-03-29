@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Space_game.Cards;
+
 namespace Space_game.Interfaces
 {
     interface IPlayerHand
     {
-        void PlayCard();
-        void AddCard();
-        void RemoveCard();
+        void AddCard(Card newCard);
+
+        int GetNumberOfCards();
     }
 }
