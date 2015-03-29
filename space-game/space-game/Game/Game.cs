@@ -13,8 +13,8 @@ namespace Space_game.Game
     // Each game is an instantiation of this object.
     class Game : IGame
     {
-        Turn CurrentTurn;
-        List<Player> Players;
+        ITurn CurrentTurn;
+        List<IPlayer> Players;
         public Game()
         {
             Players.Add(new Player("Player1"));
