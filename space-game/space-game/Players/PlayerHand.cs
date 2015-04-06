@@ -11,11 +11,11 @@ namespace Space_game.Players
 {
     class PlayerHand : IPlayerHand
     {
-        List<Card> CardsInHand;
+        IList<ICard> CardsInHand;
 
         public PlayerHand()
         {
-            CardsInHand = new List<Card>();
+            CardsInHand = new List<ICard>();
         }
 
         public int GetNumberOfCards()
@@ -23,9 +23,19 @@ namespace Space_game.Players
             return CardsInHand.Count;
         }
 
-        public void AddCard(Card newCard)
+        public void AddCard(ICard newCard)
         {
             CardsInHand.Add(newCard);
+        }
+
+        public void ToString()
+        {
+            short cardNumber = 1;
+            foreach (ICard card in CardsInHand)
+            {
+                String.Format("{0}.{1}\n", cardNumber.ToString(), card.ToString());
+                cardNumber++;
+            }
         }
     }
 }
