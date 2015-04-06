@@ -35,6 +35,10 @@ namespace Space_game.Cards.Defense
             DefenseLength = defenseLength;
         }
 
-
+        public void ToString()
+        {
+            String.Format("Energy Cost:{0}\tDefends Against:{1}\tDefense Strength:{2}\tDefense Legnth:{3}\tCard Name:{4}",
+                EnergyCost, DefendsAgainst.ToString(), DefenseStrength.ToString(), DefenseLength.ToString(), CardName);
+        }
     }
 }

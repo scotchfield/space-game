@@ -13,5 +13,7 @@ namespace Space_game.Interfaces
         void AddCard(Card newCard);
 
         int GetNumberOfCards();
+
+        void ToString();
     }
 }

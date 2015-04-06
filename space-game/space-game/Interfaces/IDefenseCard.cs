@@ -11,5 +11,6 @@ namespace Space_game.Cards.Defense
     interface IDefenseCard
     {
         void SpecialEffect(IEnumerable<string> effectNames);
+        void ToString();
     }
 }

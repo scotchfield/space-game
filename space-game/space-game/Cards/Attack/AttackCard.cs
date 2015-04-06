@@ -30,5 +30,11 @@ namespace Space_game.Cards.Attack
             WeaponDamage = weaponDamage;
             MaxTurnsDelay = weaponDelay;
         }
+
+        public void ToString()
+        {
+            String.Format("Energy Cost:{0}\tWeapon Type:{1}\tWeapon Damage:{2}\tMaxTurnsDelay:{3}\tCard Name:{4}",
+                EnergyCost, WeaponType.ToString(), WeaponDamage.ToString(), MaxTurnsDelay.ToString(), CardName);
+        }
     }
 }

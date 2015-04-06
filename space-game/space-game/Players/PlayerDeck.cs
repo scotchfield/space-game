@@ -10,9 +10,16 @@ namespace Space_game.Players
 {
     public class PlayerDeck : IPlayerDeck
     {
+        IList<ICard> Deck;
+
         public void DrawCard()
         {
             PickTopCard();
+        }
+
+        public void ToString()
+        {
+            String.Format("{0} cards in the deck.",GetDeckSize());
         }
 
         private void DiscardTopCard()
@@ -25,5 +32,9 @@ namespace Space_game.Players
 
         }
 
+        public int GetDeckSize()
+        {
+            return Deck.Count;
+        }
     }
 }
