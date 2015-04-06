@@ -19,19 +19,20 @@ namespace Space_game.Players
         int Hullpoints;
         PlayerDeck Deck;
         PlayerHand Hand;
-
         PlayerStatus DeadOrAlive;
-
-        public PlayerStatus GetPlayerStatus()
-        {
-            return DeadOrAlive;
-        }
 
         public Player(string playerName)
         {
             PlayerName = playerName;
             totalEnergy = 2;
             DeadOrAlive = PlayerStatus.Alive;
+            Deck = new PlayerDeck();
+            Hand = new PlayerHand();
+        }
+
+        public PlayerStatus GetPlayerStatus()
+        {
+            return DeadOrAlive;
         }
 
         public void RemoveHullPoints(int damage)
@@ -48,6 +49,10 @@ namespace Space_game.Players
             return Hullpoints;
         }
 
+        private void DrawCards(int nCards)
+        {
+
+        }
 
     }
 }

@@ -12,6 +12,11 @@ namespace Space_game.Players
     {
         IList<ICard> Deck;
 
+        public void PlayerDeck()
+        {
+            Deck = new List<ICard>();
+        }
+
         public void DrawCard()
         {
             PickTopCard();
