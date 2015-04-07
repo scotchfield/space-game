@@ -12,7 +12,7 @@ namespace Space_game.Players
 {
     public class PlayerDeck : IPlayerDeck
     {
-        IList<ICard> Deck;
+        List<ICard> Deck;
 
         public void PlayerDeck()
         {
@@ -25,6 +25,14 @@ namespace Space_game.Players
             Deck.RemoveAt(0);
 
             return result;
+        }
+
+        public List<ICard> DrawTopCards(int nCards)
+        {
+            IEnumerable<ICard> result = Deck.Take(nCards);
+            Deck.RemoveRange(0, nCards);
+
+            return result.ToList();
         }
 
         public void ToString()
