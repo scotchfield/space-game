@@ -51,7 +51,8 @@ namespace Space_game.Players
 
         private void DrawCards(int nCards)
         {
-
+            ICard result = Deck.DrawTopCard();
+            Hand.AddCard(result);
         }
 
     }

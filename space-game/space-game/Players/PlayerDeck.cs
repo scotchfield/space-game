@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 using Space_game.Interfaces;
+using Space_game.Cards;
 
 namespace Space_game.Players
 {
@@ -17,14 +19,17 @@ namespace Space_game.Players
             Deck = new List<ICard>();
         }
 
-        public void DrawCard()
+        public ICard DrawTopCard()
         {
-            PickTopCard();
+            ICard result = Deck.ElementAt<ICard>(0);
+            Deck.RemoveAt(0);
+
+            return result;
         }
 
         public void ToString()
         {
-            String.Format("{0} cards in the deck.",GetDeckSize());
+            String.Format("{0} cards in the deck.", GetDeckSize());
         }
 
         private void DiscardTopCard()
