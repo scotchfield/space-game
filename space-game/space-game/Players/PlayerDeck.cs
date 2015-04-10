@@ -29,7 +29,7 @@ namespace Space_game.Players
         public List<ICardRepresentation> DrawTopCards(int nCards)
         {
             IEnumerable<ICardRepresentation> result = _deck.Take(nCards);
-            _deck.RemoveRange(0, nCards);
+            _deck.RemoveRange(0, nCards-1);
 
             return result.ToList();
         }
