@@ -8,9 +8,9 @@ using Space_game.Cards;
 
 namespace Space_game.Interfaces
 {
-    interface IPlayerHand
+    public interface IPlayerHand
     {
-        void AddCard(Card newCard);
+        void AddCard(ICardRepresentation newCard);
 
         int GetNumberOfCards();
 

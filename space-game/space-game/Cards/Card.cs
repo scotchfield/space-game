@@ -10,8 +10,11 @@ namespace Space_game.Cards
 {
     class Card
     {
+        protected static int NextCardNumber = 0;
+
         protected string CardName;
         protected int EnergyCost;
+        protected int CardNumber;
 
         public string GetCardName()
         {
@@ -20,23 +23,14 @@ namespace Space_game.Cards
 
         public Card()
         {
-            EnergyCost = 0;
-        }
-
-        public Card(int energyCost)
-        {
-            EnergyCost = energyCost;
-        }
-
-        public Card(string cardName)
-        {
-            CardName = cardName;
+            SetNextCardNumber();
         }
 
         public Card(int energyCost, string cardName)
         {
             CardName = cardName;
             EnergyCost = energyCost;
+            SetNextCardNumber();
         }
 
         virtual public void SpecialEffect(IEnumerable<string> effectNames)
@@ -49,6 +43,12 @@ namespace Space_game.Cards
                     throw new NotImplementedException();
                 }
             }
+        }
+
+        private void SetNextCardNumber()
+        {
+            CardNumber = NextCardNumber;
+            NextCardNumber++;
         }
     }
 }

@@ -9,10 +9,10 @@ using Space_game.Enumerations;
 
 namespace Space_game.Cards
 {
-    interface CardRepresentation : ICardRepresentation
+    public class CardRepresentation : ICardRepresentation
     {
 
-        ICard GetCard(CardDictionary card)
+        public ICard GetCard(int card)
         {
             throw new NotImplementedException();
         }

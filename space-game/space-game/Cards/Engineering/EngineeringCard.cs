@@ -12,11 +12,13 @@ namespace Space_game.Cards.Engineering
     class EngineeringCard : Card, IEngineeringCard
     {
         public EngineeringCard()
+            : base()
         {
 
         }
 
         public EngineeringCard(string cardName, int energyCost, SpecialEffects cardEffect)
+            : base()
         {
 
         }

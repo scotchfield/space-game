@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Space_game.Cards.Attack
 {
-    interface IAttackCard
+    public interface IAttackCard
     {
         void SpecialEffect(IEnumerable<string> effectNames);
         void ToString();

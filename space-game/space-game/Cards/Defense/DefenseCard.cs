@@ -17,6 +17,7 @@ namespace Space_game.Cards.Defense
         int DefenseLength;
 
         public DefenseCard()
+            : base()
         {
             EnergyCost = 1;
             DefendsAgainst = AttackType.missile;

@@ -16,6 +16,7 @@ namespace Space_game.Cards.Attack
         int MaxTurnsDelay;
 
         AttackCard()
+            : base()
         {
             EnergyCost = 0;
             WeaponType = AttackType.beam;
