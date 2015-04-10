@@ -46,6 +46,7 @@ namespace Space_game.Cards
                 foreach (string effect in effectNames)
                 {
                     // call functions specific to that card's special abilities
+                    throw new NotImplementedException();
                 }
             }
         }
