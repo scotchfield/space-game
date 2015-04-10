@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Linq;
 
 using Space_game.Interfaces;
 using Space_game.Cards;
@@ -12,25 +11,25 @@ namespace Space_game.Players
 {
     public class PlayerDeck : IPlayerDeck
     {
-        List<ICard> Deck;
+        private List<ICardRepresentation> _deck;
 
-        public void PlayerDeck()
+        public PlayerDeck()
         {
-            Deck = new List<ICard>();
+            _deck = new List<ICardRepresentation>();
         }
 
-        public ICard DrawTopCard()
+        public ICardRepresentation DrawTopCard()
         {
-            ICard result = Deck.ElementAt<ICard>(0);
-            Deck.RemoveAt(0);
+            ICardRepresentation result = _deck.ElementAt<ICardRepresentation>(0);
+            _deck.RemoveAt(0);
 
             return result;
         }
 
-        public List<ICard> DrawTopCards(int nCards)
+        public List<ICardRepresentation> DrawTopCards(int nCards)
         {
-            IEnumerable<ICard> result = Deck.Take(nCards);
-            Deck.RemoveRange(0, nCards);
+            IEnumerable<ICardRepresentation> result = _deck.Take(nCards);
+            _deck.RemoveRange(0, nCards);
 
             return result.ToList();
         }
@@ -40,19 +39,14 @@ namespace Space_game.Players
             String.Format("{0} cards in the deck.", GetDeckSize());
         }
 
-        private void DiscardTopCard()
+        public ICardRepresentation DiscardTopCard()
         {
-
-        }
-
-        private void PickTopCard()
-        {
-
+            return DrawTopCard();
         }
 
         public int GetDeckSize()
         {
-            return Deck.Count;
+            return _deck.Count;
         }
     }
 }

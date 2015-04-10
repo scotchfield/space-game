@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cards\Attack\AttackCard.cs" />
+    <Compile Include="Cards\CardRepresentation.cs" />
+    <Compile Include="Enumerations\CardDictionary.cs" />
     <Compile Include="Enumerations\PlayerStatus.cs" />
     <Compile Include="Enumerations\SpecialEffects.cs" />
     <Compile Include="Enumerations\TurnActions.cs" />
@@ -50,6 +52,7 @@
     <Compile Include="Interfaces\IAttackCard.cs" />
     <Compile Include="Cards\Card.cs" />
     <Compile Include="Cards\Defense\DefenseCard.cs" />
+    <Compile Include="Interfaces\ICardRepresentation.cs" />
     <Compile Include="Interfaces\IDefenseCard.cs" />
     <Compile Include="Cards\Engineering\EngineeringCard.cs" />
     <Compile Include="Enumerations\AttackType.cs" />

@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Space_game.Cards;
-
-namespace Space_game.Interfaces
+namespace Space_game.Enumerations
 {
-    interface IPlayerDeck
+    enum CardDictionary
     {
-        ICardRepresentation DrawTopCard();
+        beamAttack,
+        photonTorpedo
     }
 }
