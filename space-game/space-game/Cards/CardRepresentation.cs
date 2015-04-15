@@ -11,10 +11,16 @@ namespace Space_game.Cards
 {
     public class CardRepresentation : ICardRepresentation
     {
+        private Dictionary<int, Card> _representations = new Dictionary<int, Card>();
 
-        public ICard GetCard(int card)
+        public void AddCardRepresentation(int cardNum, Card card)
         {
-            throw new NotImplementedException();
+            _representations.Add(cardNum, card);
+        }
+
+        public Card GetCard(int card)
+        {
+            return _representations[card];
         }
     }
 }

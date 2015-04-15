@@ -8,7 +8,7 @@ using Space_game.Interfaces;
 
 namespace Space_game.Cards
 {
-    class Card
+    public class Card
     {
         protected static int NextCardNumber = 0;
 
