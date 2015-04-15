@@ -11,6 +11,18 @@ namespace Space_game.Players
     // For cards that have had their energy cost paid, but not used yet.
     class PlayedCards
     {
-        IEnumerable<ICardRepresentation> CardsWaiting;
+        private List<int> _cardsWaiting = new List<int>();
+
+        public void PutCardDown(int cardRepresentation)
+        {
+            _cardsWaiting.Add(cardRepresentation);
+            throw new NotImplementedException();
+        }
+
+        public void PlayCard(int cardRepresentation)
+        {
+            _cardsWaiting.Remove(cardRepresentation);
+            throw new NotImplementedException();
+        }
     }
 }
