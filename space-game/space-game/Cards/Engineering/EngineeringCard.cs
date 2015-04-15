@@ -23,6 +23,9 @@ namespace Space_game.Cards.Engineering
 
         }
 
-
+        public override string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

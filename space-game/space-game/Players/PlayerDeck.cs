@@ -34,9 +34,9 @@ namespace Space_game.Players
             return result.ToList();
         }
 
-        public void ToString()
+        public override string ToString()
         {
-            String.Format("{0} cards in the deck.", GetDeckSize());
+            return String.Format("{0} cards in the deck.", GetDeckSize());
         }
 
         public ICardRepresentation DiscardTopCard()

@@ -9,5 +9,6 @@ namespace Space_game.Interfaces
     interface IEngineeringCard
     {
         void SpecialEffect(IEnumerable<string> effectNames);
+        string ToString();
     }
 }

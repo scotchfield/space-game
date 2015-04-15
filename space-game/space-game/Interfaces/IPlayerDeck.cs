@@ -11,5 +11,6 @@ namespace Space_game.Interfaces
     public interface IPlayerDeck
     {
         ICardRepresentation DrawTopCard();
+        string ToString();
     }
 }
