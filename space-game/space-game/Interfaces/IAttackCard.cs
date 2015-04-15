@@ -9,6 +9,6 @@ namespace Space_game.Cards.Attack
     public interface IAttackCard
     {
         void SpecialEffect(IEnumerable<string> effectNames);
-        void ToString();
+        string ToString();
     }
 }

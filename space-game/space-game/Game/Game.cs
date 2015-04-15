@@ -17,6 +17,7 @@ namespace Space_game.Game
         List<IPlayer> Players;
         public Game()
         {
+            Players = new List<IPlayer>();
             Players.Add(new Player("Player1"));
             Players.Add(new Player("Player2"));
         }

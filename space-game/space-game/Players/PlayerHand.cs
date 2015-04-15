@@ -18,6 +18,16 @@ namespace Space_game.Players
             CardsInHand = new List<ICardRepresentation>();
         }
 
+        public PlayerHand(int startingCardNumber)
+        {
+            CardsInHand = new List<ICardRepresentation>(startingCardNumber);
+            for (int i = 0; i < startingCardNumber; i++)
+            {
+                //draft cards
+                throw new NotImplementedException();
+            }
+        }
+
         public int GetNumberOfCards()
         {
             return CardsInHand.Count;
