@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Space_game.Enumerations
 {
-    enum TurnActions
+    enum TurnActions : short
     {
-        Gain2Energy,
-        Gain1Energy1Card,
-        PlayCard
+        Gain2Energy = 1,
+        Gain1Energy1Card = 2,
+        PlayCard = 3
     }
 }
