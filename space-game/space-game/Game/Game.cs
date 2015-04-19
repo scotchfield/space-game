@@ -13,21 +13,33 @@ namespace Space_game.Game
     // Each game is an instantiation of this object.
     class Game : IGame
     {
-        ITurn CurrentTurn;
-        List<IPlayer> Players;
+        private ITurn _currentTurn;
+        private List<IPlayer> _players;
+
         public Game()
         {
-            Players = new List<IPlayer>();
-            Players.Add(new Player("Player1"));
-            Players.Add(new Player("Player2"));
+            _players = new List<IPlayer>();
+            _players.Add(new Player("Player1"));
+            _players.Add(new Player("Player2"));
         }
 
         private void PlayTurn()
         {
             do
             {
-                CurrentTurn = new Turn();
+                _currentTurn = new Turn();
+                ChooseActions(_players);
+                 
             } while (PlayersAlive());
+        }
+
+        private void ChooseActions(List<IPlayer> players)
+        {
+            foreach(IPlayer player in players)
+            {
+                Console.WriteLine(string.Format("{0}'s turn", player.GetPlayerName()));
+                player.SetAction(_currentTurn.ChooseAction());
+            }
         }
 
 
@@ -35,7 +47,7 @@ namespace Space_game.Game
         {
             bool result = true;
 
-            foreach(Player player in Players)
+            foreach(Player player in _players)
             {
                 if(player.GetPlayerStatus() == PlayerStatus.Dead)
                 {

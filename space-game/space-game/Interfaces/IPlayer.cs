@@ -11,7 +11,11 @@ namespace Space_game.Interfaces
     interface IPlayer
     {
         void RemoveHullPoints(int damage);
+        void SetAction(TurnActions action);
+        string GetPlayerName();
+
         int GetHullPoints();
+        
 
         PlayerStatus GetPlayerStatus();
     }

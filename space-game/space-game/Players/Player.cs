@@ -11,7 +11,7 @@ namespace Space_game.Players
 {
     class Player : IPlayer
     {
-        string PlayerName;
+        public string PlayerName { get; private set; }
 
         int totalEnergy;
         int maxEnergy = 10;
@@ -20,6 +20,7 @@ namespace Space_game.Players
         PlayerDeck Deck;
         PlayerHand Hand;
         PlayerStatus DeadOrAlive;
+        private TurnActions _action;
 
         public Player(string playerName)
         {
@@ -35,6 +36,11 @@ namespace Space_game.Players
             return DeadOrAlive;
         }
 
+        public void SetAction(TurnActions action)
+        {
+            _action = action;
+        }
+
         public void RemoveHullPoints(int damage)
         {
             this.Hullpoints -= damage;
@@ -47,6 +53,11 @@ namespace Space_game.Players
         public int GetHullPoints()
         {
             return Hullpoints;
+        }
+
+        public string GetPlayerName()
+        {
+            return PlayerName;
         }
 
         private void DrawCards(int nCards)
