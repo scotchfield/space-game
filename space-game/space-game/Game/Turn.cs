@@ -19,7 +19,7 @@ namespace Space_game.Game
             {
                 DisplayTurnActions();
                 turnAction = PlayerChoice();
-            } while (IsValidChoice(turnAction));
+            } while (!IsValidChoice(turnAction));
 
             return (TurnActions)turnAction;
         }
@@ -52,6 +52,7 @@ namespace Space_game.Game
             TurnActions? result = null;
             int choice;
             choice = Console.Read();
+            choice = choice - 48;
             if(choice < 4 && choice > 0)
             {
                 result = (TurnActions)choice;
@@ -61,7 +62,7 @@ namespace Space_game.Game
 
         private bool IsValidChoice(TurnActions? choice)
         {
-            bool result = choice != null;
+            bool result = (choice != null);
 
             if(!result)
             {

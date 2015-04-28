@@ -12,7 +12,9 @@ namespace Space_game
     {
         static void Main(string[] args)
         {
-            new Space_game.Game.Game();
+            Game.Game HotSeat = new Space_game.Game.Game();
+            HotSeat.PlayGame();
+
         }
     }
 }

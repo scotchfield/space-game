@@ -11,7 +11,7 @@ using Space_game.Players;
 namespace Space_game.Game
 {
     // Each game is an instantiation of this object.
-    class Game : IGame
+    public class Game : IGame
     {
         private ITurn _currentTurn;
         private List<IPlayer> _players;
@@ -23,7 +23,7 @@ namespace Space_game.Game
             _players.Add(new Player("Player2"));
         }
 
-        private void PlayTurn()
+        public void PlayGame()
         {
             do
             {
