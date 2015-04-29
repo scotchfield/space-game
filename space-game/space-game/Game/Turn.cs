@@ -14,14 +14,11 @@ namespace Space_game.Game
         public TurnActions ChooseAction()
         {
             TurnActions? turnAction;
-            bool? exit = null;
-
             do
             {
                 DisplayTurnActions();
                 turnAction = PlayerChoice();
-                exit = !IsValidChoice(turnAction);
-            } while ((bool)exit);
+            } while (IsValidChoice(turnAction));
 
             return (TurnActions)turnAction;
         }
@@ -51,13 +48,17 @@ namespace Space_game.Game
 
         private TurnActions? PlayerChoice()
         {
-            TurnActions? result = null;
+            TurnActions? result;
             int choice;
             choice = ReadPlayerInput();
             if(choice < 4 && choice > 0)
             {
                 Console.WriteLine();
                 result = (TurnActions)choice;
+            }
+            else
+            {
+                result = null;
             }
             return result;
         }
@@ -80,14 +81,14 @@ namespace Space_game.Game
 
         private bool IsValidChoice(TurnActions? choice)
         {
-            bool result = (choice != null);
+            bool result = (choice == null);
 
-            if(!result)
+            if(result)
             {
                 Console.WriteLine("Incorrect input, please try again");
                 Console.WriteLine();
             }
-            return result;
+            return !result;
         }
     }
 }
