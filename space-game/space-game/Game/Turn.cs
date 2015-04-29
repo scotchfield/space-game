@@ -14,12 +14,14 @@ namespace Space_game.Game
         public TurnActions ChooseAction()
         {
             TurnActions? turnAction;
+            bool? exit = null;
 
             do
             {
                 DisplayTurnActions();
                 turnAction = PlayerChoice();
-            } while (!IsValidChoice(turnAction));
+                exit = !IsValidChoice(turnAction);
+            } while ((bool)exit);
 
             return (TurnActions)turnAction;
         }
@@ -51,13 +53,18 @@ namespace Space_game.Game
         {
             TurnActions? result = null;
             int choice;
-            choice = Console.Read();
-            choice = choice - 48;
+            choice = ReadPlayerInput();
             if(choice < 4 && choice > 0)
             {
+                Console.WriteLine();
                 result = (TurnActions)choice;
             }
             return result;
+        }
+
+        private int ReadPlayerInput()
+        {
+            return Convert.ToInt32(Console.ReadLine().ToString().Trim());
         }
 
         private bool IsValidChoice(TurnActions? choice)
