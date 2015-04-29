@@ -64,7 +64,18 @@ namespace Space_game.Game
 
         private int ReadPlayerInput()
         {
-            return Convert.ToInt32(Console.ReadLine().ToString().Trim());
+            int result;
+
+            try
+            {
+                result = Convert.ToInt32(Console.ReadLine().ToString().Trim());
+            }
+            catch (Exception)
+            {
+                result = 0;
+            }
+
+            return result;
         }
 
         private bool IsValidChoice(TurnActions? choice)
