@@ -13,6 +13,7 @@ namespace Space_game.Interfaces
         void RemoveHullPoints(int damage);
         void SetAction(TurnActions action);
         string GetPlayerName();
+        void PerformTurnAction();
 
         int GetHullPoints();
         

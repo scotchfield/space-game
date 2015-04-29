@@ -60,6 +60,25 @@ namespace Space_game.Players
             return PlayerName;
         }
 
+        public void PerformTurnAction()
+        {
+            switch(_action)
+            {
+                case TurnActions.Gain2Energy:
+                    totalEnergy += 2;
+                    break;
+                case TurnActions.Gain1Energy1Card:
+                    totalEnergy += 1;
+                    DrawCards(1);
+                    break;
+                case TurnActions.PlayCard:
+                    throw new NotImplementedException();
+                default:
+                    break;
+
+            }
+        }
+
         private void DrawCards(int nCards)
         {
             ICardRepresentation result = Deck.DrawTopCard();
