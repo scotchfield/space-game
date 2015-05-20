@@ -66,6 +66,10 @@ namespace Space_game.Players
             {
                 case TurnActions.Gain2Energy:
                     totalEnergy += 2;
+                    if (totalEnergy > maxEnergy)
+                    {
+                        totalEnergy = maxEnergy;
+                    }
                     break;
                 case TurnActions.Gain1Energy1Card:
                     totalEnergy += 1;
@@ -77,6 +81,11 @@ namespace Space_game.Players
                     break;
 
             }
+        }
+
+        public void DisplayPlayerInformation()
+        {
+            Console.WriteLine(string.Format("Hullpoints: {0}\tEnergy: {1}", Hullpoints, totalEnergy));
         }
 
         private void DrawCards(int nCards)

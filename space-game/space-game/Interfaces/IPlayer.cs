@@ -14,6 +14,7 @@ namespace Space_game.Interfaces
         void SetAction(TurnActions action);
         string GetPlayerName();
         void PerformTurnAction();
+        void DisplayPlayerInformation();
 
         int GetHullPoints();
         
