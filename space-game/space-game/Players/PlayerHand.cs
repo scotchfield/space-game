@@ -38,12 +38,12 @@ namespace Space_game.Players
             CardsInHand.Add(newCard);
         }
 
-        public void ToString()
+        public void DisplayPlayerHand()
         {
             short cardNumber = 1;
             foreach (ICardRepresentation card in CardsInHand)
             {
-                String.Format("{0}.{1}\n", cardNumber.ToString(), card.ToString());
+                Console.WriteLine(String.Format("{0}.{1}\n", cardNumber.ToString(), card.ToString()));
                 cardNumber++;
             }
         }

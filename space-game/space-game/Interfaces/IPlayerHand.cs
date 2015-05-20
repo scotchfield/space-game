@@ -15,5 +15,7 @@ namespace Space_game.Interfaces
         int GetNumberOfCards();
 
         void ToString();
+
+        void DisplayPlayerHand();
     }
 }
