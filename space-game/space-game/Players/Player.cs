@@ -76,11 +76,23 @@ namespace Space_game.Players
                     DrawCards(1);
                     break;
                 case TurnActions.PlayCard:
-                    throw new NotImplementedException();
+                    ChoosePlayedCard();
+                    break;
                 default:
                     break;
 
             }
+        }
+
+        private void ChoosePlayedCard()
+        {
+            int choice;
+
+            Console.WriteLine("Choose card to play:");
+            Hand.DisplayPlayerHand();
+            choice = Convert.ToInt32(Console.ReadLine().ToString().Trim());
+
+            throw new NotImplementedException();
         }
 
         public void DisplayPlayerInformation()

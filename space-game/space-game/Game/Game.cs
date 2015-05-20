@@ -29,8 +29,17 @@ namespace Space_game.Game
             {
                 _currentTurn = new Turn();
                 ChooseActions(_players);
+                
                  
             } while (PlayersAlive());
+        }
+
+        private void PerformActions(List<IPlayer> players)
+        {
+            foreach(IPlayer player in players)
+            {
+                player.PerformTurnAction();
+            }
         }
 
         private void ChooseActions(List<IPlayer> players)
@@ -39,7 +48,6 @@ namespace Space_game.Game
             {
                 Console.WriteLine(string.Format("{0}'s turn", player.GetPlayerName()));
                 player.SetAction(_currentTurn.ChooseAction());
-                player.PerformTurnAction();
             }
         }
 
