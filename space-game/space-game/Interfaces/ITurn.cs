@@ -10,8 +10,10 @@ namespace Space_game.Interfaces
 {
     interface ITurn
     {
+
         TurnActions ChooseAction();
 
         void UsePlayedCard();
+        void PlayTurn(List<IPlayer> players);
     }
 }

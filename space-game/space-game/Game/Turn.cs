@@ -11,6 +11,15 @@ namespace Space_game.Game
 {
     class Turn : ITurn
     {
+        public void PlayTurn(List<IPlayer> players)
+        {
+            foreach (IPlayer player in players)
+            {
+                Console.WriteLine(string.Format("{0}'s turn", player.GetPlayerName()));
+                player.SetAction(this.ChooseAction());
+            }
+        }
+
         public TurnActions ChooseAction()
         {
             TurnActions? turnAction;
