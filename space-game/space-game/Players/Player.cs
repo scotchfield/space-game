@@ -20,6 +20,7 @@ namespace Space_game.Players
         PlayerDeck Deck;
         PlayerHand Hand;
         PlayerStatus DeadOrAlive;
+        PlayedCards CardsInPlay;
         private TurnActions _action;
 
         public Player(string playerName)
@@ -76,7 +77,7 @@ namespace Space_game.Players
                     DrawCards(1);
                     break;
                 case TurnActions.PlayCard:
-                    ChoosePlayedCard();
+                    PutCardInPlay();
                     break;
                 default:
                     break;
@@ -84,7 +85,7 @@ namespace Space_game.Players
             }
         }
 
-        private void ChoosePlayedCard()
+        private void PutCardInPlay()
         {
             int choice;
 
@@ -92,7 +93,7 @@ namespace Space_game.Players
             Hand.DisplayPlayerHand();
             choice = Convert.ToInt32(Console.ReadLine().ToString().Trim());
 
-            throw new NotImplementedException();
+            CardsInPlay.PutInPlay(Hand.At(choice));
         }
 
         public void DisplayPlayerInformation()

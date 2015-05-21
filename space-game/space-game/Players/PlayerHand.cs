@@ -11,7 +11,7 @@ namespace Space_game.Players
 {
     class PlayerHand : IPlayerHand
     {
-        IList<ICardRepresentation> CardsInHand;
+        List<ICardRepresentation> CardsInHand;
 
         public PlayerHand()
         {
@@ -46,6 +46,11 @@ namespace Space_game.Players
                 Console.WriteLine(String.Format("{0}.{1}\n", cardNumber.ToString(), card.ToString()));
                 cardNumber++;
             }
+        }
+
+        public ICardRepresentation At(int i)
+        {
+            return CardsInHand.ElementAt(i);
         }
     }
 }
