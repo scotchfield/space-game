@@ -17,6 +17,7 @@ namespace Space_game.Game
             {
                 Console.WriteLine(string.Format("{0}'s turn", player.GetPlayerName()));
                 player.SetAction(this.ChooseAction());
+                player.PerformTurnAction();
             }
         }
 

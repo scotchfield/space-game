@@ -30,16 +30,9 @@ namespace Space_game.Game
                 _currentTurn = new Turn();
                 _currentTurn.PlayTurn(_players);
                 
+                _currentTurn.UsePlayedCard();
                  
             } while (PlayersAlive());
-        }
-
-        private void PerformActions(List<IPlayer> players)
-        {
-            foreach(IPlayer player in players)
-            {
-                player.PerformTurnAction();
-            }
         }
 
 
